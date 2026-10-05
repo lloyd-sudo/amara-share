@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amara Africa — Golf Partnership · A Southern Season for Your Members</title>
+<style>
+  :root{ --navy:#13243b; --deep:#0d1827; --gold:#c39a52; --gold2:#d9b877;
+         --ivory:#f4efe6; --ink:#22303f; --muted:#6a7787; --line:#e2dbcd; --sand:#efe9dc; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ivory);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:0 44px}
+  .sans{font-family:'Segoe UI',system-ui,sans-serif}
+
+  .toolbar{position:fixed;top:0;left:0;right:0;z-index:50;background:#0d1827;color:#fff;
+    display:flex;align-items:center;gap:16px;padding:12px 22px;font-family:'Segoe UI',sans-serif;box-shadow:0 2px 14px rgba(0,0,0,.3)}
+  .toolbar b{color:var(--gold2);font-size:13px;letter-spacing:.04em}
+  .toolbar .hint{font-size:12.5px;color:#9db3d1}
+  .toolbar .sp{flex:1}
+  .toolbar button{background:var(--gold);color:#0d1827;border:none;padding:10px 20px;border-radius:6px;font-weight:700;font-size:13.5px;letter-spacing:.04em;cursor:pointer}
+  .toolbar button:hover{background:var(--gold2)}
+  .page{margin-top:52px}
+
+  /* cover */
+  .cover{background:linear-gradient(160deg,#13243b 0%,#1b3050 55%,#0d1827 100%);color:#fff;position:relative;overflow:hidden;padding:60px 0 64px}
+  .cover::after{content:"";position:absolute;right:-160px;top:-170px;width:540px;height:540px;border:1px solid rgba(195,154,82,.18);border-radius:50%}
+  .cover::before{content:"";position:absolute;left:-120px;bottom:-200px;width:460px;height:460px;border:1px solid rgba(195,154,82,.12);border-radius:50%}
+  .cover .wrap{position:relative;z-index:2}
+  .lockup{width:270px;height:auto;display:block;margin-bottom:40px;filter:drop-shadow(0 2px 9px rgba(0,0,0,.4))}
+  .eyebrow{color:var(--gold2);font-size:13px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;font-family:'Segoe UI',sans-serif;margin-bottom:18px}
+  .cover h1{font-size:50px;line-height:1.06;font-weight:500;letter-spacing:-.01em;max-width:16ch}
+  .cover h1 em{color:var(--gold2);font-style:italic}
+  .cover .sub{margin-top:22px;font-size:19px;line-height:1.6;color:rgba(255,255,255,.9);max-width:44ch}
+  .cover .meta{margin-top:38px;font-family:'Segoe UI',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+  section{padding:52px 0}
+  section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .cap2{font-family:'Segoe UI',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  h2{font-size:33px;font-weight:500;color:var(--navy);margin:10px 0 6px;line-height:1.15}
+  h2 em{color:var(--gold);font-style:italic}
+  .lead{font-size:18px;line-height:1.66;color:#3a4655;max-width:60ch;margin-top:14px}
+  p.body{font-size:16px;line-height:1.66;color:#3f4b59;max-width:62ch;margin-top:12px}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+  .stat{background:var(--sand);border-radius:6px;padding:22px 20px;border-left:3px solid var(--gold)}
+  .stat b{display:block;font-size:38px;color:var(--navy);font-weight:600;line-height:1.05}
+  .stat span{display:block;font-family:'Segoe UI',sans-serif;font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px 26px;margin-top:26px}
+  .pt{font-family:'Segoe UI',sans-serif}
+  .pt h4{font-size:16px;color:var(--navy);margin-bottom:5px;font-weight:700}
+  .pt h4::before{content:"";display:inline-block;width:7px;height:7px;background:var(--gold);border-radius:50%;margin-right:9px;vertical-align:middle}
+  .pt p{font-size:14px;color:#4a5666;line-height:1.55}
+
+  .exp{margin-top:28px;border:1px solid var(--line);background:#fff;border-radius:4px;overflow:hidden}
+  .exp-head{background:linear-gradient(135deg,#17293f,#0d1827);color:#f4efe4;padding:26px 34px}
+  .exp-head .kind{font-family:'Segoe UI',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+  .exp-head h3{font-size:26px;font-weight:500;margin-top:6px}
+  .exp-head h3 em{color:var(--gold2);font-style:italic}
+  .exp-body{padding:24px 34px 30px}
+  .leg{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid #f0ece2}
+  .leg:last-child{border-bottom:none}
+  .leg .l{font-family:'Segoe UI',sans-serif}
+  .leg .l .d{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .leg .l span{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+  .leg .c h4{font-size:18px;font-weight:500;color:var(--navy);margin-bottom:5px}
+  .leg .c p{font-size:14.5px;color:#3f4b59;line-height:1.58}
+  .leg .c .golf{font-family:'Segoe UI',sans-serif;font-size:12.5px;color:var(--navy);background:var(--sand);border-left:3px solid var(--gold);padding:7px 11px;margin-top:8px;display:block}
+  .leg .c .golf b{color:#8a6d34}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:6px;padding:22px 20px;position:relative}
+  .step .n{font-size:44px;font-weight:600;color:rgba(195,154,82,.28);font-family:Georgia,serif;line-height:1}
+  .step h4{font-size:17px;color:var(--navy);margin:6px 0 6px;font-weight:500}
+  .step p{font-family:'Segoe UI',sans-serif;font-size:13.5px;color:#4a5666;line-height:1.55}
+
+  .fee{margin-top:30px;background:linear-gradient(135deg,#13243b,#0d1827);color:#fff;border-radius:8px;padding:30px 34px;position:relative;overflow:hidden}
+  .fee::after{content:"";position:absolute;right:-90px;top:-90px;width:280px;height:280px;border:1px solid rgba(195,154,82,.2);border-radius:50%}
+  .fee .cap2{color:var(--gold2)}
+  .fee h3{font-size:26px;font-weight:500;margin:8px 0 10px;max-width:24ch}
+  .fee h3 em{color:var(--gold2);font-style:italic}
+  .fee p{font-family:'Segoe UI',sans-serif;font-size:14.5px;color:rgba(255,255,255,.86);max-width:58ch;line-height:1.6;position:relative;z-index:2}
+
+  .cta{text-align:center;padding:56px 0 20px}
+  .cta h2{font-size:30px}
+  .cta .who{margin-top:22px;font-family:'Segoe UI',sans-serif;font-size:15px;color:var(--navy)}
+  .cta .who b{display:block;font-size:18px;margin-bottom:2px}
+  .cta .who span{color:var(--muted);font-size:13.5px}
+
+  footer{border-top:1px solid var(--line);padding:22px 0 40px;font-family:'Segoe UI',sans-serif;font-size:11.5px;color:var(--muted);line-height:1.55}
+
+  .stripband{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stripband figure{position:relative;height:280px;overflow:hidden;margin:0}
+  .stripband img{width:100%;height:100%;object-fit:cover;display:block}
+  .stripband figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 18px 13px;color:#fff;
+    font-family:'Segoe UI',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+    background:linear-gradient(0deg,rgba(6,15,25,.82),rgba(6,15,25,0));text-shadow:0 1px 4px rgba(0,0,0,.5)}
+
+  @media print{
+    .toolbar{display:none} .page{margin-top:0}
+    .stripband{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body{background:#fff}
+    section{page-break-inside:avoid} .exp,.fee,.step{page-break-inside:avoid}
+    .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+  @media(max-width:720px){
+    .wrap{padding:0 22px} .cover h1{font-size:36px}
+    .stats,.steps{grid-template-columns:1fr} .grid2{grid-template-columns:1fr}
+    .leg{grid-template-columns:1fr} .exp-body,.exp-head{padding-left:22px;padding-right:22px}
+    .stripband{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar sans">
+  <b>AMARA AFRICA</b><span class="hint">Golf partnership pitch · club-facing</span>
+  <span class="sp"></span>
+  <button onclick="window.print()">⬇ Download as PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="wrap">
+      <img class="lockup" src="assets/brand/amara-full-gold.svg" alt="Amara Africa">
+      <div class="eyebrow">A Golf Partnership · Southern Africa</div>
+      <h1>When the Gulf turns to <em>fire</em>, the Cape turns to <em>green</em>.</h1>
+      <div class="sub">A warm-season home for your members — championship golf and quiet luxury at the far end of the world, exactly when the desert is at its hottest.</div>
+      <div class="meta">A partnership proposal · Prepared by Amara Africa · 2026</div>
+    </div>
+  </div>
+
+  <!-- PHOTO BAND -->
+  <div class="stripband">
+    <figure><img src="assets/golf/cape-gardens.jpg" alt="Constantia and the Winelands"><figcaption>Constantia · the Winelands</figcaption></figure>
+    <figure><img src="assets/golf/cape-coast.jpg" alt="The whale coast"><figcaption>The Whale Coast</figcaption></figure>
+    <figure><img src="assets/golf/cape-golden.jpg" alt="Golden hour on the Garden Route"><figcaption>The Garden Route</figcaption></figure>
+  </div>
+
+  <!-- OPPORTUNITY -->
+  <section>
+    <div class="wrap">
+      <div class="cap2">The opportunity</div>
+      <h2>Your quietest months are the Cape's <em>finest</em>.</h2>
+      <p class="lead">From June to September the heat empties your fairways and your calendar. In that same window, half a world south, the Cape is dry, green and glorious — and your members are looking for somewhere to play. We turn your low season into a new line of revenue, without you lifting a club.</p>
+      <div class="stats">
+        <div class="stat"><b>Jun–Sep</b><span>Gulf golf's low season — the exact window the Cape plays at its best</span></div>
+        <div class="stat"><b>−2 hrs</b><span>Just two hours behind Dubai — no jet lag, an easy overnight flight</span></div>
+        <div class="stat"><b>1 : 3</b><span>Members' spend goes far further against the rand — five-star for the price of four</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY MEMBERS SAY YES -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="cap2">Why your members will say yes</div>
+      <h2>Built for the Gulf golfer.</h2>
+      <div class="grid2">
+        <div class="pt"><h4>Play when home is unplayable</h4><p>A true summer escape — long, dry, warm days on the Cape's best courses while the Gulf sits at 45°.</p></div>
+        <div class="pt"><h4>No jet lag</h4><p>Just two hours behind Dubai — a comfortable overnight flight, and they land rested to tee off the next morning.</p></div>
+        <div class="pt"><h4>World-class fairways</h4><p>Coastal links, mountain parkland and lagoon-side championship courses ranked among the country's finest.</p></div>
+        <div class="pt"><h4>Family &amp; privacy</h4><p>Halal-aware dining, discreet five-star hotels, and days arranged in parallel for non-golfing partners and children.</p></div>
+        <div class="pt"><h4>Value that flatters the wallet</h4><p>The exchange rate makes genuine luxury feel accessible — a stronger holiday for the same budget.</p></div>
+        <div class="pt"><h4>Everything handled</h4><p>Tee times, caddies, club transfers, private drivers, wine estates — arranged end to end. They just play.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE EXPERIENCE (neutral: courses named, hotels not) -->
+  <section>
+    <div class="wrap">
+      <div class="cap2">The experience we deliver</div>
+      <h2>A signature Cape golf journey.</h2>
+      <p class="body">A ready example of what a member's escape looks like — nine unhurried days, three of the Cape's finest coastal and winelands hotels, and four championship courses. Every journey is tailored to the member's dates, handicap and party; this is the shape of it.</p>
+
+      <div class="exp">
+        <div class="exp-head">
+          <div class="kind">Sample member journey · fully tailored</div>
+          <h3>Fairways of the <em>Cape</em> · 9 days</h3>
+        </div>
+        <div class="exp-body">
+          <div class="leg">
+            <div class="l"><div class="d">Days 1–3</div><span>Cape Town · Constantia</span></div>
+            <div class="c">
+              <h4>The Mother City &amp; the Constantia fairways</h4>
+              <p>Private arrival and a stay among the vineyards beneath Table Mountain, with the Winelands, the Peninsula and the Waterfront within easy reach.</p>
+              <span class="golf"><b>⛳ Golf —</b> Cape Royal Golf Estate &amp; Westlake Golf Club: a modern layout and a classic parkland round beneath the mountain.</span>
+            </div>
+          </div>
+          <div class="leg">
+            <div class="l"><div class="d">Days 4–6</div><span>Hermanus · The Whale Coast</span></div>
+            <div class="c">
+              <h4>The whale coast &amp; Arabella</h4>
+              <p>A scenic drive to a cliff-top hotel above the bay — in season, southern right whales drift within sight of the terrace. Sea-facing spa and coastal wine valley between rounds.</p>
+              <span class="golf"><b>⛳ Golf —</b> Arabella Golf Club: ranked among South Africa's very best, laid along the Bot River lagoon beneath the Kogelberg.</span>
+            </div>
+          </div>
+          <div class="leg">
+            <div class="l"><div class="d">Days 7–9</div><span>Plettenberg Bay · Garden Route</span></div>
+            <div class="c">
+              <h4>The Garden Route finale</h4>
+              <p>East along the Garden Route to a cliffside address above the bay — beaches, the Robberg reserve and the lagoon, with a relaxed final round before the flight home.</p>
+              <span class="golf"><b>⛳ Golf —</b> Plettenberg Bay Country Club: a friendly, walkable Garden-Route course among milkwoods and fynbos.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PARTNERSHIP + FEE -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="cap2">The partnership</div>
+      <h2>You refer. We deliver. <em>Everyone earns.</em></h2>
+      <p class="body">Your members already trust you with their game. We simply give you something valuable to offer them when the season turns — and reward you for the introduction. No inventory, no risk, no operational burden on your team.</p>
+
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>You introduce</h4><p>A warm mention to interested members, or a brochure on the counter. We take it from there.</p></div>
+        <div class="step"><div class="n">2</div><h4>We craft &amp; deliver</h4><p>Amara designs, quotes and runs the entire journey to a five-star standard — your members are looked after end to end.</p></div>
+        <div class="step"><div class="n">3</div><h4>You earn</h4><p>A referral fee on every confirmed booking, paid to the club. Transparent, tracked, and settled on travel.</p></div>
+      </div>
+
+      <div class="fee">
+        <div class="cap2">A new summer revenue line</div>
+        <h3>A referral fee on <em>every</em> member who travels.</h3>
+        <p>We agree a simple, transparent referral structure with your club — a share of every booking that originates with your members. It turns your quietest season into found revenue, and gives your members an experience they'll thank you for. Terms are set together and confirmed in a short partnership agreement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="wrap cta">
+      <div class="cap2">Let's build it</div>
+      <h2>A season your members will remember — and a line of revenue you didn't have.</h2>
+      <p class="body" style="margin:14px auto 0;text-align:center">We'd welcome a short conversation to shape a partnership around your membership. We tailor the offer, the collateral and the fee to your club.</p>
+      <div class="who">
+        <b>Lloyd Barkhuizen</b>
+        Amara Africa · A Private World of African Luxury<br>
+        <span>lloyd@amarafrica.com · +971 58 858 5960 · amarafrica.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      Amara Africa arranges tailor-made luxury golf journeys through South Africa's finest coastal and winelands hotels, with preferential access and negotiated rates. Courses named are illustrative; access, tee times and green fees are confirmed live before quoting. Hotels are selected to match each member's party and dates. This document is a partnership proposal prepared for golf-club distribution partners and is not a consumer offer.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
