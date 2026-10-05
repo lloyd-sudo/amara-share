@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amara Africa — Private Memorandum · Market Brief · May MMXXVI</title>
+<!--
+  EDITING NOTES
+  - All copy lives in the HTML below; edit text directly between the tags.
+  - Market figures and their source lines are preserved exactly from the original brief. Do not alter without a verifiable source.
+  - Wordmark is set in type as a placeholder ("Amara" italic). Drop in the real logo if preferred (replace .wordmark contents).
+  - Page 7 portfolio is reframed by experience register — no collection, no named properties.
+  - Print to PDF: A4 portrait, "Background graphics" ON.
+-->
+<!-- Brand type: Cormorant / Cormorant Garamond — the elegant serif used across Amara's luxury documents — with Georgia as the offline fallback. Segoe UI is reserved for the small tracked uppercase labels only. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --f-head:"Cormorant",Georgia,"Times New Roman",serif;        /* display headings & figures */
+    --f-body:"Cormorant Garamond",Georgia,"Times New Roman",serif; /* reading body */
+    --f-ui:"Segoe UI",-apple-system,system-ui,"Helvetica Neue",Arial,sans-serif; /* small tracked labels only */
+  }
+</style>
+<style>
+  :root{
+    /* NAVY EDITION — navy ground, silver/white text, gold accents, white (silver) logo */
+    --paper:#15273E;          /* navy sheet */
+    --paper-edge:#1C3251;     /* raised navy panel */
+    --ink:#EEF1F6;            /* near-white / silver headlines */
+    --ink-soft:#C3CBD8;       /* silver body text */
+    --navy-deep:#0A121D;      /* darkest ground behind the sheets */
+    --gold:#CDA863;           /* gold, lifted slightly for navy contrast */
+    --gold-soft:#DDC48D;
+    --label:#94A0B4;          /* muted silver-slate labels */
+    --rule:rgba(207,224,244,.18);
+    --rule-soft:rgba(207,224,244,.09);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--navy-deep);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:19px;
+    line-height:1.62;
+  }
+  /* Utility label face — Segoe UI */
+  .eyebrow,.label,.kicker,.foot,.stat-label,.source,.contact-label,.register-region,
+  .roman,.attrib,.mb-label,.contact .email,.rail .l,.rail .r{
+    font-family:var(--f-ui);
+  }
+
+  .sheet{
+    position:relative;
+    width:794px;
+    min-height:1123px;
+    margin:34px auto;
+    background:var(--paper);
+    padding:74px 84px 96px;
+    box-shadow:0 2px 34px rgba(0,0,0,.5);
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* ---------- shared top meta row ---------- */
+  .topmeta{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:8px;
+  }
+  .topmeta .right{ text-align:right; }
+  .kicker{
+    font-size:10.5px;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--label);
+    font-weight:400;
+    line-height:2;
+  }
+  .roman{
+    font-size:10.5px;
+    letter-spacing:.34em;
+    color:var(--label);
+    font-family:var(--f-ui);
+  }
+
+  /* brand logo — the official gold lockup (contains the wordmark, Arabic line & tagline already) */
+  .brand-lockup{ display:block; width:300px; max-width:62%; height:auto; }
+  .brand-mark{ display:block; width:172px; height:auto; }
+
+  /* ---------- footer rail ---------- */
+  .rail{
+    margin-top:auto;
+    padding-top:18px;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:end;
+    gap:12px;
+  }
+  .rail .l{ font-family:var(--f-ui); font-size:10px; letter-spacing:.34em; text-transform:uppercase; color:var(--label); }
+  .rail .c{ text-align:center; font-style:italic; font-size:15px; color:var(--gold); }
+  .rail .r{ text-align:right; font-family:var(--f-ui); font-size:10px; letter-spacing:.28em; color:var(--label); }
+
+  /* ---------- typography ---------- */
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:400;
+    margin:0 0 22px;
+  }
+  h1.display{
+    font-weight:400;
+    font-size:62px;
+    line-height:1.04;
+    letter-spacing:-.005em;
+    margin:0;
+    color:var(--ink);
+  }
+  h1.display em{ font-style:italic; color:var(--gold); }
+  h2.head{
+    font-weight:400;
+    font-size:46px;
+    line-height:1.08;
+    margin:0 0 30px;
+    color:var(--ink);
+  }
+  h2.head em{ font-style:italic; color:var(--gold); }
+  .lead{ font-size:20px; line-height:1.62; color:var(--ink-soft); margin:0 0 18px; }
+  .lead.big{ font-size:23px; }
+  p{ margin:0 0 16px; }
+  .hr{ height:1px; background:var(--rule); border:0; margin:30px 0; }
+  .intro-italic{ font-style:italic; font-size:19px; line-height:1.6; color:var(--ink-soft); }
+  .intro-italic .gold{ color:var(--gold); }
+
+  /* ---------- cover ---------- */
+  .cover h1.display{ font-size:74px; }
+  .cover-sub{
+    font-style:italic;
+    font-size:20px;
+    line-height:1.62;
+    color:var(--ink-soft);
+    max-width:90%;
+    margin-top:26px;
+  }
+  .cover-sub .gold{ color:var(--gold-soft); }
+  .cover-block{ margin-top:30px; }
+
+  /* ---------- stat grid ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px 40px;
+    margin:34px 0 28px;
+  }
+  .stat .num{
+    font-size:46px;
+    font-weight:500;
+    color:var(--gold);
+    line-height:1;
+    letter-spacing:-.01em;
+  }
+  .stat-label{
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--label);
+    margin-top:10px;
+    line-height:1.7;
+  }
+  .source{
+    font-size:10.5px;
+    line-height:1.7;
+    color:var(--label);
+    letter-spacing:.01em;
+    margin-top:6px;
+  }
+
+  /* ---------- big single figure (page 4) ---------- */
+  .megafig{
+    font-size:128px;
+    font-weight:500;
+    color:var(--gold);
+    line-height:.95;
+    letter-spacing:-.02em;
+    margin:8px 0 6px;
+  }
+  .megafig-note{ font-style:italic; font-size:20px; color:var(--ink-soft); max-width:78%; margin-bottom:34px; }
+
+  /* ---------- pull quote (page 5) ---------- */
+  .quotemark{ font-size:80px; color:var(--gold-soft); line-height:.4; font-style:italic; }
+  .pull{
+    font-size:30px;
+    line-height:1.34;
+    font-style:italic;
+    color:var(--ink);
+    margin:6px 0 26px;
+    max-width:94%;
+  }
+  .attrib{ font-family:var(--f-ui); font-size:10.5px; letter-spacing:.26em; text-transform:uppercase; color:var(--label); margin-bottom:30px; }
+
+  /* ---------- profile list (page 6) ---------- */
+  .plist{ display:grid; grid-template-columns:1fr 1fr; gap:26px 44px; margin-top:8px; }
+  .pitem .pi-num{ font-style:italic; font-size:18px; color:var(--gold); }
+  .pitem h4{ font-weight:500; font-size:23px; margin:2px 0 7px; color:var(--ink); }
+  .pitem p{ font-size:16px; line-height:1.55; color:var(--ink-soft); margin:0; }
+
+  /* ---------- portfolio registers (page 7) ---------- */
+  .registers{ display:grid; grid-template-columns:1fr 1fr; gap:30px 44px; margin-top:10px; }
+  .register{ border-top:1px solid var(--rule); padding-top:16px; }
+  .register .rnum{ font-style:italic; font-size:17px; color:var(--gold); }
+  .register h4{ font-weight:500; font-size:27px; margin:4px 0 8px; color:var(--ink); line-height:1.1; }
+  .register-region{ font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--label); }
+  .portfolio-note{ font-style:italic; font-size:15.5px; color:var(--ink-soft); margin-top:30px; }
+
+  /* ---------- distribution (page 8) ---------- */
+  .modelbox{
+    border:1px solid var(--rule);
+    padding:24px 28px;
+    margin:26px 0 24px;
+    background:var(--paper-edge);
+  }
+  .modelbox .mb-label{ font-family:var(--f-ui); font-size:10.5px; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+  .modelbox p{ font-size:16.5px; line-height:1.58; color:var(--ink-soft); margin:0; }
+  .agencies{ display:flex; justify-content:space-between; align-items:center; gap:14px; margin:18px 0 16px; padding:17px 4px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+  .agencies .ag{ display:flex; align-items:center; justify-content:center; flex:1; min-width:0; }
+  .agencies .aglogo{ max-height:40px; max-width:100%; width:auto; object-fit:contain; }
+  .agencies .agname{ display:none; font-family:var(--f-head); font-weight:500; font-size:21px; letter-spacing:.02em; color:var(--ink); }
+  .agencies .ag.noimg .aglogo{ display:none; }
+  .agencies .ag.noimg .agname{ display:inline; }
+
+  /* ---------- final word (page 9) ---------- */
+  .contact{ margin-top:8px; }
+  .contact-label{ font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--label); margin-bottom:8px; }
+  .contact .name{ font-style:italic; font-size:30px; color:var(--ink); line-height:1; }
+  .contact .email{ font-family:var(--f-ui); font-size:13px; color:var(--gold); letter-spacing:.02em; margin-top:6px; }
+
+  /* high-contrast display face for headings & figures */
+  h1.display, h2.head, .megafig, .megafig-note, .pull, .stat .num, .register h4, .pitem h4, .contact .name, .cover-sub, .intro-italic, .rail .c, .portfolio-note{
+    font-family:var(--f-head);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:840px){
+    body{ font-size:17px; }
+    .sheet{ width:auto; min-height:0; margin:14px; padding:42px 30px 60px; }
+    .cover h1.display{ font-size:50px; }
+    h1.display{ font-size:44px; }
+    h2.head{ font-size:34px; }
+    .megafig{ font-size:78px; }
+    .stats,.plist,.registers{ grid-template-columns:1fr; }
+    .pull{ font-size:24px; }
+  }
+
+  /* screen-only download control */
+  .dlbtn{ position:fixed; top:20px; right:20px; z-index:90; font-family:var(--f-ui); font-size:11.5px;
+    letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:#13243B; background:var(--gold);
+    border:none; border-radius:30px; padding:12px 20px; cursor:pointer; box-shadow:0 8px 22px rgba(0,0,0,.4); }
+  .dlbtn:hover{ filter:brightness(1.06); }
+  .dlbtn .ic{ margin-right:7px; }
+
+  @page{ size:A4; margin:0; }
+  @media print{
+    body{ background:var(--navy-deep); }
+    .dlbtn{ display:none !important; }
+    .sheet{ margin:0; box-shadow:none; width:210mm; min-height:297mm; page-break-after:always; }
+    .sheet:last-child{ page-break-after:auto; }
+  }
+</style>
+</head>
+<body>
+<button class="dlbtn" onclick="window.print()" title="Opens your browser's print dialog — choose “Save as PDF”, turn OFF “Headers and footers” and turn ON “Background graphics”."><span class="ic">⤓</span>Download PDF</button>
+
+<!-- ============ 1 · COVER ============ -->
+<section class="sheet cover">
+  <div class="topmeta">
+    <img class="brand-lockup" src="assets/brand/amara-full-white.svg" alt="Amara Africa — A Private World of African Luxury">
+    <div class="right">
+      <div class="kicker">Confidential</div>
+      <div class="kicker">Volume I</div>
+      <div class="kicker">May MMXXVI</div>
+    </div>
+  </div>
+
+  <div class="cover-block" style="margin-top:120px;">
+    <p class="eyebrow">Private Memorandum · 2026</p>
+    <h1 class="display">An <em>exclusive</em><br>opportunity,<br>quietly written.</h1>
+    <hr class="hr" style="margin:42px 0 34px;">
+    <p class="cover-sub">A confidential brief on a singular opportunity — bringing a portfolio of premium South African houses to the Gulf’s most discerning travellers, across the UAE, the Kingdom of Saudi Arabia, Qatar and the wider GCC, at <span class="gold">the precise moment the market has opened.</span></p>
+  </div>
+
+  <div class="rail">
+    <div class="l"></div>
+    <div class="c"></div>
+    <div class="r">Amara Africa<br>Dubai · Cape Town · George</div>
+  </div>
+</section>
+
+<!-- ============ 2 · A NOTE BEFORE WE BEGIN ============ -->
+<section class="sheet">
+  <div class="topmeta">
+    <div class="kicker">A Note Before We Begin</div>
+    <div class="roman">I.</div>
+  </div>
+  <p class="eyebrow" style="margin-top:26px;">From Lloyd Barkhuizen</p>
+
+  <div style="margin-top:90px;">
+    <h2 class="head">This is not a forecast of<br>future demand.</h2>
+    <p class="lead big">It is a quiet reading of a market that has opened — and a note on the moment to meet it.</p>
+  </div>
+
+  <div class="rail">
+    <div class="l">Amara Africa</div>
+    <div class="c">A market, opened.</div>
+    <div class="r">02 · MMXXVI</div>
+  </div>
+</section>
+
+<!-- ============ 3 · THE OPENING ============ -->
+<section class="sheet">
+  <div class="topmeta">
+    <div class="kicker">The Opening · A Market, A Moment</div>
+    <div class="roman">II.</div>
+  </div>
+
+  <h2 class="head" style="margin-top:34px;">A market,<br>a moment,<br>a partnership.</h2>
+
+  <p class="lead">The Gulf is among the world’s most affluent outbound travel markets — the UAE, Saudi Arabia, Qatar, Kuwait, Bahrain and Oman. South Africa captures only a fraction of it.</p>
+  <p>The opportunity is one of alignment. Gulf travellers — with Saudi Arabia the single largest market, close to half of all GCC outbound spending — increasingly choose long-haul destinations, and that spending is growing at pace. South Africa offers precisely the unhurried, private, nature-led luxury they seek, yet remains under-represented in the channel that reaches them.</p>
+  <p class="intro-italic">The clientele exists today. <span class="gold">What is missing is the route to market.</span></p>
+
+  <div class="stats">
+    <div class="stat"><div class="num">~49%</div><div class="stat-label">Saudi share of GCC outbound spend</div></div>
+    <div class="stat"><div class="num">$27.7B</div><div class="stat-label">Saudi residents’ outbound travel spend · 2024</div></div>
+    <div class="stat"><div class="num">+16.9%</div><div class="stat-label">Growth in Saudi outbound spend · YoY 2024</div></div>
+    <div class="stat"><div class="num">$70.46B</div><div class="stat-label">Total GCC outbound market · 2024</div></div>
+  </div>
+  <p class="source">Saudi outbound spend: SR103.84bn (~US$27.7bn) in 2024, up 16.94% YoY — Saudi Central Bank, via Arab News, Apr 2025. Saudi share of GCC outbound expenditure ~49% — Consultancy-ME, citing GCC outbound research, 2024. GCC market size: IMARC Group, “GCC Outbound Travel and Tourism Market, 2025–2033.”</p>
+
+  <div class="rail">
+    <div class="l">Amara Africa</div>
+    <div class="c">The macro is aligned.</div>
+    <div class="r">03</div>
+  </div>
+</section>
+
+<!-- ============ 4 · THE MARKET ============ -->
+<section class="sheet">
+  <div class="topmeta">
+    <div class="kicker">The Market · An Annual Figure</div>
+    <div class="roman">III.</div>
+  </div>
+
+  <p class="eyebrow" style="margin-top:30px;">GCC Outbound Travel &amp; Tourism Market — 2024</p>
+  <div class="megafig">$70.46B</div>
+  <p class="megafig-note">growing at seven point one percent annually — across the UAE, Saudi Arabia, Qatar, Kuwait, Bahrain and Oman, with Saudi Arabia the largest single market.</p>
+
+  <div class="stats" style="grid-template-columns:repeat(3,1fr);">
+    <div class="stat"><div class="num" style="font-size:38px;">$70.46B</div><div class="stat-label">GCC market · 2024</div></div>
+    <div class="stat"><div class="num" style="font-size:38px;">~49%</div><div class="stat-label">Saudi share of spend</div></div>
+    <div class="stat"><div class="num" style="font-size:38px;">$138.06B</div><div class="stat-label">GCC projected · 2033</div></div>
+  </div>
+  <p class="source">GCC market size and projection: IMARC Group, “GCC Outbound Travel and Tourism Market 2025–2033” (one research house’s estimate; others publish broadly comparable but differing numbers). Saudi share of GCC outbound expenditure ~49% — Consultancy-ME, citing GCC outbound research, 2024.</p>
+
+  <div class="rail">
+    <div class="l">Amara Africa</div>
+    <div class="c">A figure in waiting.</div>
+    <div class="r">04</div>
+  </div>
+</section>
+
+<!-- ============ 5 · THE KINGDOM ============ -->
+<section class="sheet">
+  <div class="topmeta">
+    <div class="kicker">The Markets · The Gulf In Motion</div>
+    <div class="roman">IV.</div>
+  </div>
+
+  <div style="margin-top:70px;">
+    <div class="quotemark">”</div>
+    <p class="pull">In 2024, outbound spending by Saudi residents — the Gulf’s largest single market — grew by almost seventeen percent, to roughly twenty-eight billion dollars: close to half of all GCC outbound spending, with the balance across the UAE, Qatar and the wider Gulf.</p>
+    <p class="attrib">Saudi Central Bank · 2024 · GCC Outbound Research</p>
+  </div>
+
+  <hr class="hr">
+  <p class="source">Outbound travel spending by Saudi residents reached SR103.84 billion (about US$27.7 billion) in 2024, up 16.94% year on year (Saudi Central Bank, via Arab News, Apr 2025). Saudi Arabia represents roughly 49% of total GCC outbound travel expenditure (Consultancy-ME, citing GCC outbound research, 2024). South Africa already ranks among the long-haul destinations Saudi travellers choose (Renub Research).</p>
+
+  <div class="rail">
+    <div class="l">Amara Africa</div>
+    <div class="c">The Gulf, led by the Kingdom.</div>
+    <div class="r">05</div>
+  </div>
+</section>
+
+<!-- ============ 6 · THE TRAVELLER ============ -->
+<section class="sheet">
+  <div class="topmeta">
+    <div class="kicker">The Traveller · A Profile, Not A Demographic</div>
+    <div class="roman">V.</div>
+  </div>
+
+  <h2 class="head" style="margin-top:34px;">A profile,<br>not a demographic.</h2>
+  <p class="lead">The Gulf traveller — across Saudi Arabia, the UAE and the wider GCC — is not a market to be sold to, but a clientele to be served. Sophisticated, culturally specific, and remarkably consistent in what they value.</p>
+
+  <div class="plist">
+    <div class="pitem"><span class="pi-num">i.</span><h4>A vehicle, never shared.</h4><p>Premium pricing is accepted — expected, even — for exclusive, non-shared accommodation and activities. Privacy is the non-negotiable luxury.</p></div>
+    <div class="pitem"><span class="pi-num">ii.</span><h4>A kitchen, quietly Halal-aware.</h4><p>Properties that prepare Halal-aware menus without ceremony, observe prayer times, and respect modesty preferences without being asked.</p></div>
+    <div class="pitem"><span class="pi-num">iii.</span><h4>A family, multi-generational.</h4><p>Travel rarely happens alone. Three generations of varying ages — requiring villas, connecting suites, and itineraries with multiple registers of energy.</p></div>
+    <div class="pitem"><span class="pi-num">iv.</span><h4>A document, written by hand.</h4><p>Bespoke itineraries written for the specific guest. Concierge-level attention from a single point of contact. Templates are felt — and refused.</p></div>
+    <div class="pitem"><span class="pi-num">v.</span><h4>A voice, sometimes in Arabic.</h4><p>A clear preference for Arabic-speaking hosts and guides where available. Not always required, but always appreciated — and a meaningful differentiator.</p></div>
+  </div>
+
+  <div class="rail">
+    <div class="l">Amara Africa</div>
+    <div class="c">Five quiet certainties.</div>
+    <div class="r">06</div>
+  </div>
+</section>
+
+<!-- ============ 7 · THE PORTFOLIO (reframed by register) ============ -->
+<section class="sheet">
+  <div class="topmeta">
+    <div class="kicker">The Portfolio · A Curated Mix</div>
+    <div class="roman">VI.</div>
+  </div>
+
+  <h2 class="head" style="margin-top:34px;">A portfolio,<br>quietly chosen.</h2>
+  <p class="lead">Each property hand-selected for its specific affinity to the Gulf traveller — owner-operated, Halal-aware, and a distinct register of luxury across South Africa’s most compelling landscapes.</p>
+
+  <div class="registers">
+    <div class="register"><span class="rnum">i.</span><h4>Big Five Safari</h4><div class="register-region">Sabi Sand · Greater Kruger, South Africa</div></div>
+    <div class="register"><span class="rnum">ii.</span><h4>Intimate Safari</h4><div class="register-region">Greater Kruger, South Africa</div></div>
+    <div class="register"><span class="rnum">iii.</span><h4>Mountain &amp; Wilderness</h4><div class="register-region">Marakele · Waterberg, South Africa</div></div>
+    <div class="register"><span class="rnum">iv.</span><h4>Urban Sophistication</h4><div class="register-region">Cape Town, South Africa</div></div>
+  </div>
+
+  <p class="portfolio-note">A hand-picked mix of exceptional, owner-operated houses. Names and details shared on request.</p>
+
+  <div class="rail">
+    <div class="l">Amara Africa</div>
+    <div class="c">Owner-operated, every one.</div>
+    <div class="r">07</div>
+  </div>
+</section>
+
+<!-- ============ 8 · THE DISTRIBUTION ============ -->
+<section class="sheet">
+  <div class="topmeta">
+    <div class="kicker">The Distribution · A Channel, Not A Sales Force</div>
+    <div class="roman">VII.</div>
+  </div>
+
+  <h2 class="head" style="margin-top:34px;">The clientele exists.<br>The channel is being built.</h2>
+  <p class="lead">The Gulf’s UHNW clientele — across the UAE, Saudi Arabia, Qatar and beyond — already sits inside established luxury-agency relationships. They do not need to be created — they need to be reached. Amara Africa is building distribution relationships across the GCC’s leading luxury travel platforms, providing market integration, cultural fluency, and a single operational point of contact — so that the houses retain full ownership of the guest experience while reaching a channel that is otherwise difficult to access directly.</p>
+
+  <div class="modelbox">
+    <div class="mb-label">The B2B2C Model</div>
+    <p>The agencies hold the clientele. Amara delivers operational integration and cultural fluency. The houses retain the guest experience — reaching the Gulf market without building a sales operation to do it.</p>
+  </div>
+
+  <div class="agencies">
+    <span class="ag noimg"><span class="agname" style="font-size:15px">National travel champions</span></span>
+    <span class="ag noimg"><span class="agname" style="font-size:15px">Luxury online agencies</span></span>
+    <span class="ag noimg"><span class="agname" style="font-size:15px">Airline retail &amp; GSAs</span></span>
+    <span class="ag noimg"><span class="agname" style="font-size:15px">Premium trade networks</span></span>
+  </div>
+  <p class="source">Representative of the GCC’s leading luxury-travel channels. Specific relationships are in development; not all are contracted.</p>
+
+  <div class="rail">
+    <div class="l">Amara Africa</div>
+    <div class="c">Reach, not overhead.</div>
+    <div class="r">08</div>
+  </div>
+</section>
+
+<!-- ============ 9 · A FINAL WORD ============ -->
+<section class="sheet">
+  <div class="topmeta">
+    <img class="brand-mark" src="assets/brand/amara-wordmark-white.svg" alt="Amara Africa">
+    <div class="right">
+      <div class="kicker">A Final Word</div>
+      <div class="kicker">VIII.</div>
+      <div class="kicker">MMXXVI</div>
+    </div>
+  </div>
+
+  <p class="eyebrow" style="margin-top:34px;">From Lloyd Barkhuizen</p>
+  <h2 class="head" style="margin:18px 0 28px;">The market has opened.<br>The window is real.<br><em>We would value an<br>introduction.</em></h2>
+  <hr class="hr">
+  <p class="lead">The Gulf is among the world’s largest and most affluent outbound travel markets — the UAE, Saudi Arabia, Qatar and the wider GCC, with Saudi Arabia the single largest — and its travellers are already choosing long-haul destinations like South Africa in growing numbers. Amara Africa is building both the supply relationships and the distribution channel to meet the moment — and an introduction from someone who knows the region would be invaluable. We would be grateful for the conversation.</p>
+
+  <div class="contact" style="margin-top:40px;">
+    <div class="contact-label">Direct Contact</div>
+    <div class="name">Lloyd Barkhuizen</div>
+    <div class="email">lloyd@amarafrica.com</div>
+  </div>
+
+  <div class="rail">
+    <div class="l">Amara Africa</div>
+    <div class="c">Private Memorandum</div>
+    <div class="r">May · MMXXVI · Confidential</div>
+  </div>
+</section>
+
+</body>
+</html>

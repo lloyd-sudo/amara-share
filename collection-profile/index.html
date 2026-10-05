@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amara Africa — Company Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#22201b; --ink2:#4a463e; --soft:#6f6a5f; --faint:#9a9484;
+    --navy:#0e1c27; --navy2:#16324a;
+    --bronze:#b18a4a; --gold:#caa657; --goldsoft:#d9c79e;
+    --paper:#faf6ee; --cream:#fffdf9; --line:#e7ddca;
+    --disp:'Marcellus','Iowan Old Style',Georgia,serif;
+    --serif:'Cormorant Garamond','Iowan Old Style',Palatino,Georgia,serif;
+    --sans:'Jost','Segoe UI',system-ui,sans-serif;
+    --ar:'Amiri','Noto Naskh Arabic','Times New Roman',serif;
+  }
+  /* Arabic / RTL */
+  .doc.ar{direction:rtl}
+  .doc.ar h1,.doc.ar h2,.doc.ar h3,.doc.ar h4,.doc.ar p,.doc.ar .lead,.doc.ar blockquote,.doc.ar cite,.doc.ar .eyebrow,.doc.ar .ey,.doc.ar .sub,.doc.ar .cap,.doc.ar .cap2,.doc.ar .contact,.doc.ar .fine,.doc.ar .ctas a,.doc.ar .meta{font-family:var(--ar)}
+  .doc.ar .eyebrow,.doc.ar .ey,.doc.ar .cap,.doc.ar .meta,.doc.ar .fine{letter-spacing:0}
+  .doc.ar .it{font-style:normal}
+  .doc.ar .drop::first-letter{float:none;font-size:inherit;color:inherit;padding:0;font-family:inherit}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--serif);background:#2b2722;color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+  /* top utility bar (screen only) */
+  .bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,16,20,.0);backdrop-filter:saturate(140%) blur(6px);
+       padding:14px 26px;display:flex;align-items:center;gap:14px;transition:background .35s ease}
+  .bar.solid{background:rgba(10,16,20,.92)}
+  .bar a.home{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e9dfc6;text-decoration:none;opacity:.9}
+  .bar .sp{flex:1}
+  .bar button,.bar a.dl{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--gold);
+       border-radius:2px;padding:9px 18px;cursor:pointer;background:transparent;color:var(--gold);transition:all .3s ease}
+  .bar button:hover,.bar a.dl:hover{background:var(--gold);color:#10202c}
+
+  .doc{max-width:1120px;margin:0 auto;background:var(--cream);box-shadow:0 40px 120px -40px rgba(0,0,0,.75)}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;
+         color:#fff;overflow:hidden;text-align:center}
+  .cover .bg{position:absolute;inset:0;background:url('assets/deck-images-min/coast.jpg') center 38%/cover;transform:scale(1.04)}
+  .cover .ov{position:absolute;inset:0;background:
+        linear-gradient(180deg,rgba(8,14,19,.55) 0%,rgba(8,14,19,.18) 32%,rgba(8,14,19,.28) 60%,rgba(8,14,19,.86) 100%)}
+  .cover .top{position:relative;z-index:2;padding:54px 20px 0}
+  .cover .top .ey{font-family:var(--sans);font-weight:300;font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--goldsoft)}
+  .cover .mid{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 24px}
+  .cover img.logo{width:340px;max-width:78%;margin-bottom:30px;filter:drop-shadow(0 8px 30px rgba(0,0,0,.5))}
+  .cover h1{font-family:var(--disp);font-weight:400;font-size:clamp(34px,6vw,68px);line-height:1.06;letter-spacing:.5px;
+            text-shadow:0 4px 36px rgba(0,0,0,.45)}
+  .cover h1 .it{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--goldsoft)}
+  .cover .rule{width:78px;height:1px;background:var(--gold);margin:26px auto 22px;opacity:.9}
+  .cover .sub{font-family:var(--serif);font-size:clamp(17px,2.2vw,22px);font-weight:400;color:#f1ece1;max-width:30ch;margin:0 auto;line-height:1.5}
+  .cover .foot{position:relative;z-index:2;padding:0 24px 40px}
+  .cover .foot .meta{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#cabfa8}
+  .cover .scroll{font-family:var(--sans);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#bdb29a;margin-top:18px;opacity:.85}
+
+  /* ---------- shared section scaffolding ---------- */
+  section{position:relative}
+  .pad{padding:64px clamp(28px,6vw,84px)}
+  .eyebrow{font-family:var(--sans);font-weight:400;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--bronze);display:flex;align-items:center;gap:14px}
+  .eyebrow .num{font-family:var(--disp);font-size:13px;color:var(--gold);letter-spacing:.1em}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--bronze);display:inline-block}
+  h2{font-family:var(--disp);font-weight:400;font-size:clamp(28px,3.6vw,40px);color:var(--navy);line-height:1.12;letter-spacing:.3px;margin:18px 0 0}
+  .kicker{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--bronze);margin-top:8px}
+
+  /* ---------- manifesto / lead ---------- */
+  .manifesto{position:relative;background:linear-gradient(155deg,#0c1922 0%,#13293c 55%,#0e2030 100%);color:#f4eede;text-align:center;overflow:hidden}
+  .manifesto::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0%,rgba(202,166,87,.10),transparent 60%)}
+  .manifesto .inner{position:relative;z-index:2;max-width:820px;margin:0 auto}
+  .manifesto p.lead{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2.7vw,31px);line-height:1.5;color:#f4eede;letter-spacing:.2px}
+  .manifesto p.lead b{font-weight:600;color:#fff}
+  .manifesto .mk{font-family:var(--disp);font-size:22px;color:var(--gold);margin-bottom:18px;letter-spacing:.5px}
+
+  /* ---------- editorial spread (image + text) ---------- */
+  .spread{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--paper)}
+  .spread .img{min-height:560px;background-size:cover;background-position:center}
+  .spread .txt{padding:84px clamp(28px,6vw,80px);display:flex;flex-direction:column;justify-content:center}
+  .spread.rev .img{order:2}
+  .spread p{font-size:18.5px;line-height:1.82;color:var(--ink2);margin-top:20px;max-width:54ch}
+  .spread p b{color:var(--ink);font-weight:600}
+  .drop::first-letter{font-family:var(--disp);float:left;font-size:74px;line-height:.78;color:var(--bronze);padding:8px 12px 0 0}
+
+  /* ---------- full-bleed quote band ---------- */
+  .band{position:relative;min-height:62vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+  .band .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+  .band .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,19,.46),rgba(8,14,19,.62))}
+  .band .q{position:relative;z-index:2;max-width:900px;padding:40px}
+  .band .q .mark{font-family:var(--disp);font-size:50px;color:var(--gold);line-height:0;display:block;margin-bottom:14px;opacity:.85}
+  .band .q blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(26px,3.6vw,42px);line-height:1.32;text-shadow:0 3px 24px rgba(0,0,0,.4)}
+  .band .q cite{display:block;font-family:var(--sans);font-style:normal;font-weight:300;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--goldsoft);margin-top:24px}
+
+  /* ---------- what we do (3 cards) ---------- */
+  .offer{background:var(--cream)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:46px;border-top:1px solid var(--line)}
+  .cards .c{padding:34px 30px 8px;border-right:1px solid var(--line)}
+  .cards .c:last-child{border-right:none}
+  .cards .c .ci{font-family:var(--disp);font-size:18px;color:var(--gold);letter-spacing:.1em}
+  .cards .c h3{font-family:var(--disp);font-weight:400;font-size:23px;color:var(--navy);margin:14px 0 10px}
+  .cards .c p{font-size:16.5px;line-height:1.7;color:var(--ink2)}
+
+  /* ---------- gallery mosaic ---------- */
+  .galsec{background:var(--paper)}
+  .gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:215px;gap:12px;margin-top:42px}
+  .gallery .t{position:relative;overflow:hidden;background-size:cover;background-position:center;border-radius:2px}
+  .gallery .t::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.55));opacity:.9}
+  .gallery .t .cap{position:absolute;left:16px;bottom:13px;z-index:2;font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  .g1{grid-column:span 4;grid-row:span 2}
+  .g2{grid-column:span 2;grid-row:span 1}
+  .g3{grid-column:span 2;grid-row:span 1}
+  .g4{grid-column:span 3;grid-row:span 1}
+  .g5{grid-column:span 3;grid-row:span 1}
+  .galsec p.cap2{font-size:18px;line-height:1.8;color:var(--ink2);max-width:none;margin-top:34px}
+
+  /* ---------- why amara ---------- */
+  .why{background:var(--cream)}
+  .whygrid{display:grid;grid-template-columns:1fr 1fr;gap:34px 56px;margin-top:46px}
+  .why .r{border-top:1px solid var(--line);padding-top:18px}
+  .why .r .n{font-family:var(--disp);font-size:30px;color:var(--bronze);line-height:1}
+  .why .r h4{font-family:var(--disp);font-weight:400;font-size:21px;color:var(--navy);margin:10px 0 6px}
+  .why .r p{font-size:16.5px;line-height:1.7;color:var(--ink2)}
+
+  /* ---------- stat band (dark) ---------- */
+  .stats{position:relative;color:#fff;overflow:hidden}
+  .stats .bg{position:absolute;inset:0;background:url('assets/deck-images-min/hero-city.jpg') center/cover}
+  .stats .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,16,22,.86),rgba(8,16,22,.92))}
+  .stats .inner{position:relative;z-index:2}
+  .stats .eyebrow{color:var(--goldsoft)} .stats .eyebrow::before{background:var(--goldsoft)}
+  .stats h2{color:#fff}
+  .stnums{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:48px}
+  .stnums .s{text-align:left;border-left:1px solid rgba(202,166,87,.5);padding-left:22px}
+  .stnums .s .v{font-family:var(--disp);font-size:clamp(34px,4.6vw,52px);color:var(--gold);line-height:1}
+  .stnums .s .l{font-family:var(--sans);font-weight:300;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#d7d0c2;margin-top:12px;max-width:22ch;line-height:1.5}
+  .stats .srcline{font-family:var(--sans);font-weight:300;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8f8a7d;margin-top:40px}
+
+  /* ---------- who we serve ---------- */
+  .serve{background:var(--paper)}
+  .segs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:46px;background:var(--line);border:1px solid var(--line)}
+  .segs .s{background:var(--paper);padding:28px 26px;min-height:150px}
+  .segs .s .si{font-family:var(--disp);font-size:15px;color:var(--gold);letter-spacing:.1em}
+  .segs .s h4{font-family:var(--disp);font-weight:400;font-size:20px;color:var(--navy);margin:12px 0 7px}
+  .segs .s p{font-size:15.5px;line-height:1.62;color:var(--ink2)}
+
+  /* ---------- how it works (navy) ---------- */
+  .how{position:relative;background:linear-gradient(160deg,#0c1922,#13293c);color:#f2ecdd;overflow:hidden}
+  .how::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 100% 0%,rgba(202,166,87,.10),transparent 55%)}
+  .how>*{position:relative;z-index:2}
+  .how .eyebrow{color:var(--goldsoft)} .how .eyebrow::before{background:var(--goldsoft)}
+  .how h2{color:#fff}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:44px}
+  .step{position:relative;padding-top:28px;border-top:1px solid rgba(202,166,87,.55)}
+  .step .n{position:absolute;top:-22px;right:0;font-family:var(--disp);font-size:54px;color:rgba(202,166,87,.22);line-height:1}
+  .step h4{font-family:var(--disp);font-weight:400;font-size:21px;color:#fff}
+  .step p{font-size:16px;line-height:1.65;color:#d7d0c2;margin-top:8px}
+
+  /* ---------- leadership ---------- */
+  .lead-s{background:var(--paper)}
+  .founder{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start;margin-top:42px}
+  .founder .ph{width:120px;height:120px;border-radius:50%;background:linear-gradient(160deg,var(--navy),var(--navy2));color:var(--goldsoft);
+       display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:48px;flex:none;border:1px solid rgba(202,166,87,.4)}
+  .founder .nm{font-family:var(--disp);font-size:24px;color:var(--navy)}
+  .founder .role{font-family:var(--sans);font-weight:300;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin-top:4px}
+  .founder p{font-size:18px;line-height:1.8;color:var(--ink2);margin-top:16px;max-width:62ch}
+  .founder .sig{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--navy);margin-top:18px}
+
+  /* ---------- closing CTA ---------- */
+  .closing{position:relative;color:#fff;overflow:hidden;text-align:center}
+  .closing .bg{position:absolute;inset:0;background:url('assets/deck-images-min/safari-sunset.jpg') center/cover}
+  .closing .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,19,.62),rgba(8,14,19,.8))}
+  .closing .inner{position:relative;z-index:2;padding:110px clamp(28px,7vw,96px)}
+  .closing img{width:200px;max-width:60%;margin-bottom:26px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.5))}
+  .closing h2{font-family:var(--disp);font-weight:400;font-size:clamp(28px,4vw,46px);color:#fff;line-height:1.12}
+  .closing h2 .it{font-style:italic;font-family:var(--serif);color:var(--goldsoft)}
+  .closing .rule{width:70px;height:1px;background:var(--gold);margin:28px auto}
+  .closing .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .closing .ctas a{font-family:var(--sans);font-weight:400;font-size:12px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:13px 24px;border-radius:2px}
+  .closing .ctas a.p{background:var(--gold);color:#10202c}
+  .closing .ctas a.s{border:1px solid rgba(255,255,255,.5);color:#fff}
+  .closing .contact{font-family:var(--sans);font-weight:300;font-size:13px;letter-spacing:.06em;color:#e8e0cf;margin-top:38px;line-height:2}
+  .closing .contact b{color:var(--goldsoft);font-weight:400}
+  .closing .fine{font-family:var(--sans);font-weight:300;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#988f7c;margin-top:30px}
+
+  @media(max-width:700px){
+    .spread{grid-template-columns:1fr}.spread .img{min-height:320px}.spread.rev .img{order:0}
+    .cards,.segs,.steps,.stnums,.whygrid{grid-template-columns:1fr}
+    .cards .c{border-right:none;border-bottom:1px solid var(--line)}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+    .g1,.g2,.g3,.g4,.g5{grid-column:span 1;grid-row:span 1}
+    .g1{grid-column:span 2}
+    .founder{grid-template-columns:1fr}
+  }
+
+  /* ---------- print to PDF ---------- */
+  @media print{
+    @page{size:A4;margin:0}
+    html,body{background:#fff;margin:0}
+    .bar{display:none}
+    .doc{box-shadow:none;margin:0;max-width:none}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .pad{padding:46px 54px}
+    .cover .scroll{display:none}
+    /* Fixed A4 model: mm not vh (vh is unreliable in print). Immersive pages are exactly
+       one sheet with overflow clipped so nothing can spill onto extra pages. */
+    .cover,.manifesto,.band,.closing{height:297mm;min-height:297mm;overflow:hidden;
+      display:flex;flex-direction:column;justify-content:center;
+      page-break-after:always;break-after:page;page-break-inside:avoid;break-inside:avoid}
+    .cover{justify-content:space-between}
+    .manifesto .inner,.closing .inner{width:100%}
+    /* content pages — each starts on a fresh sheet; the two short pairs share a page */
+    .spread{min-height:0;page-break-before:always;page-break-after:always;page-break-inside:avoid}
+    .offer{page-break-before:always;page-break-inside:avoid}
+    .why{page-break-inside:avoid}                 /* pairs with What we do */
+    .galsec{page-break-before:always;page-break-after:always;page-break-inside:avoid}
+    .serve{page-break-before:always;page-break-inside:avoid}
+    .how{page-break-inside:avoid}                 /* pairs with Who we serve */
+    .closing{page-break-before:always;page-break-after:avoid;break-after:avoid}
+    .cards,.gallery,.whygrid,.segs,.steps,.galsec p.cap2{page-break-inside:avoid}
+    .eyebrow,h2{page-break-after:avoid}
+  }
+  .gallery.four{grid-template-columns:repeat(2,1fr);grid-auto-rows:300px}
+  .gallery.four .t{grid-column:auto;grid-row:auto}
+  .spread .txt .floc{font-family:var(--sans);font-weight:300;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin-top:10px}
+  @media print{ .spread{height:297mm;min-height:297mm;overflow:hidden} .spread .img{min-height:0} }
+</style>
+
+</head>
+<body>
+  <div class="bar" id="bar">
+    <a class="home" href="index.html">← Mission Control</a>
+    <span class="sp"></span>
+    <button id="langbtn" style="font-family:var(--ar);margin-right:8px">عربي</button>
+    <a class="dl" id="dlbtn" href="brochures/Amara%20Africa%20%E2%80%94%20Company%20Profile.pdf" download="Amara Africa — Company Profile.pdf" style="text-decoration:none;margin-right:8px">⬇ Download ready PDF</a>
+    <button onclick="window.print()">Print / custom</button>
+  </div>
+
+  <div class="doc">
+
+    <!-- COVER -->
+    <header class="cover">
+      <div class="bg"></div><div class="ov"></div>
+      <div class="top"><div class="ey">Company Profile · 2026</div></div>
+      <div class="mid">
+        <img class="logo" src="assets/social/img-1.png" alt="Amara Africa">
+        <h1>A Private World<br>of <span class="it">African Luxury</span></h1>
+        <div class="rule"></div>
+        <p class="sub">Bespoke safaris &amp; private residences across South Africa — crafted for the Gulf.</p>
+      </div>
+      <div class="foot">
+        <div class="meta">Dubai &nbsp;·&nbsp; South Africa &nbsp;·&nbsp; amarafrica.com</div>
+        <div class="scroll">Scroll to begin ↓</div>
+      </div>
+    </header>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto pad">
+      <div class="inner">
+        <div class="mk">✦</div>
+        <p class="lead">Some places are visited. Others become <b>yours</b>. Amara Africa opens the finest of South Africa to the Gulf&rsquo;s most discerning families — shaped around your <b>faith</b>, your <b>pace</b> and your <b>privacy</b>, and guided by a single trusted pair of hands from Dubai to the bush.</p>
+      </div>
+    </section>
+
+    
+<!-- QUOTE BAND -->
+    <section class="band">
+      <div class="bg" style="background-image:url('assets/deck-images-min/safari-sunset.jpg')"></div>
+      <div class="ov"></div>
+      <div class="q">
+        <span class="mark">&ldquo;</span>
+        <blockquote>We don&rsquo;t sell a checklist of sights.<br>We arrange space, privacy and time.</blockquote>
+        <cite>The Amara way</cite>
+      </div>
+    </section>
+
+    <section class="galsec pad"><div class="eyebrow"><span class="num">01</span> The Collection</div><h2>Safari &amp; the bush.</h2><div class="gallery"><div class="t g1" style="background-image:url('assets/deck-images/prop-sabi-sabi-earth.jpg')"><span class="cap">Sabi Sabi Earth Lodge · Sabi Sand · Greater Kruger</span></div><div class="t g2" style="background-image:url('assets/deck-images/prop-dulini-moya.jpg')"><span class="cap">Dulini Moya · Sabi Sand</span></div><div class="t g3" style="background-image:url('assets/deck-images/prop-saseka.jpg')"><span class="cap">Saseka · Thornybush</span></div><div class="t g4" style="background-image:url('assets/deck-images/prop-tanda-tula.jpg')"><span class="cap">Tanda Tula · Timbavati</span></div><div class="t g5" style="background-image:url('assets/deck-images/prop-shamwari.jpg')"><span class="cap">Shamwari · Eastern Cape</span></div></div><p class="cap2">The finest private reserves of the Greater Kruger and the Sabi Sand — exclusive-use lodges and residences where the wilderness is yours alone.</p></section><section class="spread"><div class="img" style="background-image:url('assets/property-images/sabi-sabi-earth-3.jpg')"></div><div class="txt"><div class="eyebrow">Featured · Safari</div><h2>Sabi Sabi Earth Lodge</h2><div class="floc">Sabi Sand · Greater Kruger</div><p>An architectural landmark carved into the earth of the Sabi Sand, where contemporary design meets one of the Big Five&rsquo;s greatest private reserves. Suites open to the bush; game drives, walking safaris and a spa, in complete privacy.</p></div></section><section class="galsec pad"><div class="eyebrow"><span class="num">02</span> The Collection</div><h2>Cape Town &amp; the coast.</h2><div class="gallery four"><div class="t " style="background-image:url('assets/deck-images/prop-oneonly-capetown.jpg')"><span class="cap">One&Only Cape Town · V&A Waterfront</span></div><div class="t " style="background-image:url('assets/deck-images/prop-cape-grace.jpg')"><span class="cap">Cape Grace · V&A Waterfront</span></div><div class="t " style="background-image:url('assets/deck-images/prop-twelve-apostles.jpg')"><span class="cap">Twelve Apostles · Atlantic Seaboard</span></div><div class="t " style="background-image:url('assets/deck-images/prop-grootbos.jpg')"><span class="cap">Grootbos · Walker Bay</span></div></div><p class="cap2">Mountain, ocean and design — the finest addresses on the Atlantic seaboard, the V&amp;A Waterfront and the whale coast of Walker Bay.</p></section><section class="spread rev"><div class="img" style="background-image:url('assets/property-images/oneonly-capetown-3.jpg')"></div><div class="txt"><div class="eyebrow">Featured · Cape Town</div><h2>One&Only Cape Town</h2><div class="floc">V&A Waterfront</div><p>An island-set urban resort beneath Table Mountain, moments from the V&amp;A Waterfront. Marina-facing suites, a spa on its own island and some of the Cape&rsquo;s finest dining &mdash; the city, in the palm of your hand.</p></div></section><section class="galsec pad"><div class="eyebrow"><span class="num">03</span> The Collection</div><h2>Winelands &amp; Garden Route.</h2><div class="gallery four"><div class="t " style="background-image:url('assets/deck-images/prop-steenberg.jpg')"><span class="cap">Steenberg · Constantia</span></div><div class="t " style="background-image:url('assets/deck-images/prop-fancourt.jpg')"><span class="cap">Fancourt · Garden Route</span></div><div class="t " style="background-image:url('assets/deck-images/prop-pezula.jpg')"><span class="cap">Pezula · Knysna</span></div><div class="t " style="background-image:url('assets/property-images/turbine-1.jpg')"><span class="cap">Turbine · Thesen Islands</span></div></div><p class="cap2">Historic wine estates in Constantia, championship fairways on the Garden Route, and design-led boutique hotels along the Knysna lagoon.</p></section><section class="spread"><div class="img" style="background-image:url('assets/property-images/vic-falls-river-5.jpg')"></div><div class="txt"><div class="eyebrow">04 · Beyond South Africa</div><h2>Victoria Falls River Lodge</h2><div class="floc">Zambezi · Victoria Falls</div><p>On the banks of the Zambezi within a private concession, at the threshold of one of the world&rsquo;s seven natural wonders. Our reach extends across the continent &mdash; and, through our sister brand <b>Amara Arabia</b>, to bespoke journeys within the Kingdom.</p></div></section><section class="serve pad"><div class="eyebrow"><span class="num">05</span> Who we serve</div><h2>Every way our travellers come to us.</h2>
+<div class="segs">
+<div class="s"><div class="si">i</div><h4>Families &amp; UHNW</h4><p>Private, malaria-free, multigenerational journeys.</p></div>
+<div class="s"><div class="si">ii</div><h4>Honeymoons &amp; Weddings</h4><p>Destination weddings and once-in-a-lifetime honeymoons.</p></div>
+<div class="s"><div class="si">iii</div><h4>Family Offices</h4><p>Discreet, de-risked travel for principals and their people.</p></div>
+<div class="s"><div class="si">iv</div><h4>Corporate &amp; MICE</h4><p>Incentives and events your best people never forget.</p></div>
+<div class="s"><div class="si">v</div><h4>Travel Trade</h4><p>A specialist partner extending your reach into luxury Africa.</p></div>
+<div class="s"><div class="si">vi</div><h4>Corporate &amp; Government</h4><p>Trusted, confidential travel for accounts and their VIPs.</p></div>
+</div></section>
+    <!-- CLOSING -->
+    <section class="closing">
+      <div class="bg"></div><div class="ov"></div>
+      <div class="inner">
+        <img src="assets/social/img-1.png" alt="Amara Africa">
+        <h2>Your private world of<br><span class="it">African luxury</span> awaits.</h2>
+        <div class="rule"></div>
+        <div class="ctas">
+          <a class="p" href="https://wa.me/971588585960" target="_blank" rel="noopener">WhatsApp us</a>
+          <a class="s" href="mailto:lloyd@amarafrica.com">Enquire privately</a>
+        </div>
+        <div class="contact">
+          <b>amarafrica.com</b> &nbsp;&middot;&nbsp; WhatsApp <b>+971 58 858 5960</b><br>
+          lloyd@amarafrica.com &nbsp;&middot;&nbsp; Instagram <b>@amaraafrica_travel</b>
+        </div>
+        <div class="fine">Amara Africa &nbsp;&middot;&nbsp; Crafted for the Gulf</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

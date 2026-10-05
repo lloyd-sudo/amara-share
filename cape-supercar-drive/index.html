@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amara Africa — A Cape Coast Supercar Drive</title>
+<style>
+  :root{
+    --navy:#16273f;        /* clear navy blue, not black */
+    --navy-deep:#0f1d31;
+    --ivory:#f5f0e7;
+    --paper:#fbf9f4;
+    --ink:#26303c;
+    --mute:#7c8aa0;
+    --gold:#c39a52;
+    --gold-2:#dcb877;
+    --line:rgba(19,36,59,.12);
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#aeb6c1;font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+  .doc{width:1040px;margin:24px auto;background:var(--paper);box-shadow:0 30px 90px -40px rgba(9,15,26,.65);overflow:hidden}
+  .wrap{padding:0 96px}                 /* generous editorial margins */
+  img{display:block;max-width:100%}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:700}
+  .rule{width:56px;height:2px;background:var(--gold);border:0;margin:18px 0}
+
+  /* ---------- HERO IMAGE (clean, no overlay/tint) ---------- */
+  .hero-img{height:500px;background:url('assets/suppliers/grandtouring/fleet-hero.jpg') center 50%/cover no-repeat}
+
+  /* ---------- TITLE BAND (navy — text lives here, not on the photo) ---------- */
+  .titleband{background:var(--navy);color:#fff;text-align:center;padding:46px 96px 46px}
+  .titleband .logo{height:54px;margin:0 auto 22px;display:block;opacity:.97}
+  .titleband .eyebrow{color:var(--gold-2);font-size:12.5px}
+  .titleband h1{font-family:var(--serif);font-weight:600;font-size:52px;line-height:1.05;letter-spacing:-.4px;margin:14px 0 14px;color:#fff}
+  .titleband .tag{font-family:var(--serif);font-style:italic;font-size:22px;color:#e7edf6;max-width:36ch;margin:0 auto;line-height:1.42}
+  .titleband .stmt{font-family:var(--serif);font-style:italic;font-size:18px;color:#c9d8ec;max-width:30ch;margin:26px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.16)}
+  .titleband .stmt small{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2);margin-top:14px;font-weight:700}
+
+  /* ---------- PROSE (flows full width) ---------- */
+  .prose{padding:66px 96px 58px}
+  .prose .eyebrow{color:var(--gold)}
+  .prose h2{font-family:var(--serif);font-weight:600;font-size:34px;color:var(--navy);letter-spacing:-.3px;margin:8px 0 20px;line-height:1.12}
+  .prose p{font-size:17px;line-height:1.8;color:#3a4552;text-align:justify;text-justify:inter-word;-webkit-hyphens:auto;hyphens:auto}
+  .prose p + p{margin-top:16px}
+  .band-img{width:100%;height:auto;display:block}
+
+  /* ---------- THREE DRIVES ---------- */
+  .drives{background:var(--paper);padding:60px 0}
+  .drives .head{text-align:center;margin-bottom:38px}
+  .drives .eyebrow{color:var(--gold)}
+  .drives h2{font-family:var(--serif);font-weight:600;font-size:32px;color:var(--navy);margin-top:8px}
+  .routes{margin-top:10px}
+  .route{display:grid;grid-template-columns:236px 1fr;gap:46px;padding:32px 0;border-top:1px solid var(--line);align-items:start}
+  .route:first-of-type{border-top:0}
+  .route .k{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;line-height:1.5}
+  .route h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy);margin:9px 0 0;line-height:1.1}
+  .route .rbody p{font-size:15.5px;line-height:1.74;color:#3f4a57;text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+  .route .rbody .rec{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--navy);margin-top:13px}
+
+  /* ---------- FLEET ---------- */
+  .fleet{background:var(--navy);color:var(--ivory);padding:64px 96px}
+  .fleet .head{text-align:center;margin-bottom:40px}
+  .fleet .eyebrow{color:var(--gold-2)}
+  .fleet h2{font-family:var(--serif);font-weight:600;font-size:32px;color:#fff;margin-top:8px}
+  .cars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .car .shot{height:220px;border-radius:6px;background:#0c1626 center/cover no-repeat;box-shadow:0 20px 44px -22px rgba(0,0,0,.7)}
+  .car.f .shot{background-image:url('assets/suppliers/grandtouring/ferrari.jpg')}
+  .car.r .shot{background-image:url('assets/suppliers/grandtouring/audi-r8.jpg')}
+  .car.p .shot{background-image:url('assets/suppliers/grandtouring/porsche.jpg')}
+  .car h3{font-family:var(--serif);font-size:21px;font-weight:600;color:#fff;margin:16px 0 6px}
+  .car p{font-size:14px;color:#c3cfdf;line-height:1.55}
+
+  /* ---------- DETAILS (flows across) ---------- */
+  .details{padding:62px 96px}
+  .details .cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .details .eyebrow{color:var(--gold)}
+  .details h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin:8px 0 14px}
+  .details p{font-size:15.5px;line-height:1.7;color:#3f4a57}
+  .details ul{list-style:none;margin-top:6px}
+  .details li{position:relative;padding-left:18px;font-size:15px;color:#3f4a57;line-height:1.5;margin-bottom:9px}
+  .details li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+  /* ---------- CTA ---------- */
+  .cta{background:var(--navy-deep);color:#fff;text-align:center;padding:62px 96px 56px}
+  .cta img.logo{height:66px;margin:0 auto 22px;filter:drop-shadow(0 6px 20px rgba(0,0,0,.5))}
+  .cta h2{font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px;color:#fff;margin-bottom:12px}
+  .cta .contact{font-family:var(--sans);font-size:14px;letter-spacing:.04em;color:#c8d3e0;margin-top:18px}
+  .cta .contact b{color:var(--gold-2)}
+  .foot-note{background:var(--paper);color:var(--mute);font-size:11px;line-height:1.6;padding:16px 96px 26px;text-align:center}
+  @media print{@page{size:1040px 4582px;margin:0}body{background:#fff}.doc{margin:0;box-shadow:none;width:1040px}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- HERO IMAGE (clean, untouched) -->
+  <div class="hero-img"></div>
+
+  <!-- TITLE BAND -->
+  <header class="titleband">
+    <img class="logo" src="assets/brand/amara-full-white.svg" alt="Amara Africa">
+    <div class="eyebrow">An Amara Signature Experience · Cape Town</div>
+    <h1>A Cape Coast Supercar Drive</h1>
+    <div class="tag">Three legends, the most beautiful coast road on earth, and one morning your family will talk about for years.</div>
+    <div class="stmt">Some journeys you take. This one takes hold of you.<small>Crafted for the Gulf</small></div>
+  </header>
+
+  <!-- PROSE -->
+  <section class="wrap prose">
+    <div class="eyebrow">The morning</div>
+    <hr class="rule">
+    <h2>Where the mountain meets the sea, the road becomes yours.</h2>
+    <p>There is a stretch of coast where Table Mountain falls straight into the Atlantic, and for a few unforgettable hours it belongs to you alone. You take the wheel of a Ferrari, an Audi R8 or a Porsche 911 and follow the cliffs the way these roads were meant to be driven — Chapman's Peak, Clarence Drive, the sea flashing silver on every bend.</p>
+    <p>A professional lead driver runs ahead, in radio contact throughout, so there is nothing to navigate and nothing to prove. Two of you to a car, trading the wheel along the way. Just the engine, the ocean air, and the person beside you. This is not a transfer between two places — it is the part of the trip everyone remembers long after the rest has faded.</p>
+  </section>
+  <img class="band-img" src="assets/suppliers/grandtouring/trio.jpg" alt="The fleet on the Cape coast">
+
+
+  <!-- THREE DRIVES -->
+  <section class="drives">
+    <div class="wrap">
+      <div class="head"><div class="eyebrow">Cape Town to Arabella · one way</div><h2>Three ways to drive the coast</h2>
+        <p style="font-size:14.5px;color:#5f6f88;max-width:60ch;margin:10px auto 0">The same glorious coastline, at three lengths — ending at Arabella, Kleinmond, with Hermanus's Old Harbour a short extension further.</p></div>
+      <div class="routes">
+        <div class="route">
+          <div><div class="k">Four hours<br>~175 km · three stops</div><h3>Chapman's Peak &amp; Clarence Drive</h3></div>
+          <div class="rbody"><p>Out along the Atlantic seaboard through Camps Bay and Llandudno to Hout Bay, then Chapman's Peak Drive, cut into the cliff face high above the water. Coffee at Noordhoek, where the keys change hands. Over Ou Kaapse Weg to the False Bay coast and east to Gordon's Bay, then Clarence Drive — the road that runs between the mountain and the sea — with a long photography stop above Kogel Bay. Through Betty's Bay to Kleinmond, and in to Arabella.</p><div class="rec">Two of the best coastal roads anywhere, in one morning — the one we'd put in front of you.</div></div>
+        </div>
+        <div class="route">
+          <div><div class="k">Three hours<br>~145 km · two stops</div><h3>Clarence Drive, the long way</h3></div>
+          <div class="rbody"><p>Down to Muizenberg and east along the False Bay shoreline to Gordon's Bay for coffee at the harbour. Then Clarence Drive in full — Kogel Bay, Rooi Els, Pringle Bay, Betty's Bay — with a long stop at the Kogel Bay viewpoints, which is where the photographs come from. A second coffee at Kleinmond, before Arabella.</p><div class="rec">The best single piece of road on the list, without the early start.</div></div>
+        </div>
+        <div class="route">
+          <div><div class="k">Two hours<br>~130 km · one stop</div><h3>Clarence Drive direct</h3></div>
+          <div class="rbody"><p>Straight out over Sir Lowry's Pass to Gordon's Bay, then Clarence Drive to Kleinmond and Arabella, with one stop above Kogel Bay for photographs. The shortest version that still feels like a drive rather than a transfer.</p><div class="rec">Right for clients arriving that morning, or teeing off in the afternoon.</div></div>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:13px;color:#7c8aa0;margin-top:26px">If the weather turns, an inland alternative runs the same distance through the Elgin Valley and Houw Hoek — mountains and farmland instead of ocean, and a road few visitors ever see.</p>
+    </div>
+  </section>
+
+  <!-- FLEET -->
+  <section class="fleet">
+    <div class="head"><div class="eyebrow">The fleet</div><h2>Three cars. Take your pick.</h2></div>
+    <div class="cars">
+      <div class="car f"><div class="shot"></div><h3>Ferrari 360 Spider</h3><p>Open to the sky, unmistakably Italian — the one that turns a drive into an occasion.</p></div>
+      <div class="car r"><div class="shot"></div><h3>Audi R8 V10</h3><p>Ten cylinders of composure — the everyday supercar that flatters every driver.</p></div>
+      <div class="car p"><div class="shot"></div><h3>Porsche 911 Turbo</h3><p>The purist's choice, and a proper manual — the one you won't want to hand back.</p></div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="wrap details">
+    <div class="cols">
+      <div>
+        <div class="eyebrow">What the day holds</div>
+        <hr class="rule">
+        <ul>
+          <li>Two guests per car, swapping between driving and riding along the route</li>
+          <li>A professional lead driver in a separate car, two-way radio throughout</li>
+          <li>Up to three cars — a party of six — travelling as one</li>
+          <li>Fuel, tolls and unhurried coffee &amp; comfort stops along the way</li>
+          <li>Every detail arranged and hosted, first enquiry to final handover, by Amara</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">How it fits your journey</div>
+        <hr class="rule">
+        <p>A morning like this belongs inside a wider Cape stay — a day either side of the bush, between the Winelands and the coast. We build it into the rhythm of your journey, brief every detail to your family's preferences, and keep one accountable pair of hands across the whole trip. Same time zone, same messaging apps, no distance between you and the answer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <img class="logo" src="assets/brand/amara-full-white.svg" alt="Amara Africa">
+    <h2>Begin the conversation.</h2>
+    <div class="contact"><b>Amara Africa</b> · Crafted for the Gulf<br>WhatsApp +971 58 858 5960 · amarafrica.com</div>
+  </section>
+
+  <div class="foot-note">Example / packaging concept for partner review — presentation and wording are Amara's, for sign-off. Drive experience operated by our Cape Town driving partner. Guests drive on a valid licence held 5+ years (carried on the day; UK licence or IDP accepted); the day is alcohol-free until the cars are handed back. Routes may change for weather or road closures, always for a road of equal calibre.</div>
+
+</div>
+</body>
+</html>

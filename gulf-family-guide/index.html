@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amara Africa — The Gulf Family's Guide to South Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#13243b; --navy2:#0d1827; --gold:#c39a52; --gold2:#dbb878;
+    --ivory:#f4efe6; --paper:#faf7f1; --ink:#2b3038; --mute:#6b7280;
+    --display:'Cormorant Garamond',Georgia,serif; --label:'Marcellus',Georgia,serif;
+    --sans:'Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .hero{background:radial-gradient(120% 90% at 82% 6%,rgba(195,154,82,.16),transparent 46%),linear-gradient(158deg,#13243b,#0d1827 72%);color:#eef3f8}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+  .top{padding:30px 0 10px;text-align:center}
+  .top img{height:74px;width:auto;margin:0 auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.5))}
+
+  .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:26px 0 54px}
+  .copy .eyebrow{font-family:var(--label);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold2)}
+  .copy h1{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.6vw,46px);line-height:1.05;color:#fff;margin:14px 0 8px}
+  .copy h1 i{font-style:italic;color:var(--gold2)}
+  .copy .sub{font-size:15.5px;color:#c7d5e8;max-width:44ch;margin-bottom:20px}
+  ul.inside{list-style:none;margin-top:8px}
+  ul.inside li{position:relative;padding-left:22px;margin-bottom:9px;font-size:14.5px;color:#dce6f2}
+  ul.inside li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+  ul.inside li b{color:#fff}
+
+  /* form card */
+  .card{background:#fff;border-radius:16px;box-shadow:0 24px 60px -28px rgba(9,14,24,.7);overflow:hidden}
+  .cover{height:180px;background-size:cover;background-position:center 62%}
+  .form{padding:24px 26px 26px}
+  .form h2{font-family:var(--display);font-weight:600;font-size:25px;color:var(--navy);line-height:1.15}
+  .form p.hint{font-size:13px;color:var(--mute);margin:5px 0 16px}
+  label{display:block;font-family:var(--label);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:12px 0 5px}
+  input{width:100%;font:inherit;font-size:15px;padding:11px 13px;border:1px solid #d9cfbe;border-radius:9px;background:#fdfbf7;color:var(--ink)}
+  input:focus{outline:none;border-color:var(--gold)}
+  .err{color:#b23b3b;font-size:12.5px;margin-top:8px;display:none}
+  .btn{width:100%;margin-top:18px;font-family:var(--label);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    background:linear-gradient(180deg,var(--gold2),var(--gold));color:#22160a;border:none;border-radius:9px;padding:14px;cursor:pointer;transition:.15s}
+  .btn:hover{filter:brightness(1.05)}
+  .fine{font-size:11.5px;color:var(--mute);margin-top:12px;line-height:1.5;text-align:center}
+
+  /* success state */
+  .done{display:none;padding:30px 26px;text-align:center}
+  .done h2{font-family:var(--display);font-weight:600;font-size:27px;color:var(--navy)}
+  .done p{font-size:14.5px;color:#4b515a;max-width:34ch;margin:8px auto 0}
+  .done .dl{display:inline-block;margin-top:18px;font-family:var(--label);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:var(--navy);color:#fff;border-radius:9px;padding:14px 26px}
+  .done .wa{display:block;margin-top:12px;font-size:13px;color:var(--gold)}
+
+  footer{background:#0d1827;color:#8fa3bd;text-align:center;padding:20px 26px;font-size:12px}
+  footer a{color:var(--gold2);text-decoration:none}
+  @media (max-width:760px){.grid{grid-template-columns:1fr;gap:24px}.cover{height:150px}}
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="wrap">
+      <div class="top"><img src="assets/brand/amara-full-gold.svg" alt="Amara Africa"></div>
+      <div class="grid">
+        <div class="copy">
+          <div class="eyebrow">A Private Guide · Free</div>
+          <h1>The Gulf Family's Guide to <i>South Africa</i></h1>
+          <div class="sub">The quiet, considered guide for a Gulf family planning something extraordinary — written by the people who design these journeys by hand.</div>
+          <ul class="inside">
+            <li><b>Why South Africa works</b> for a Gulf family — no jet lag, direct flights, world-class value</li>
+            <li><b>When to travel</b> — safari season vs Cape summer, matched to your dates</li>
+            <li><b>Halal &amp; family comfort</b> — the details we arrange before you ask</li>
+            <li><b>The classic shape</b> — Cape Town, then a malaria-free Big Five safari</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="cover" style="background-image:url('assets/social/marataba/marataba-1.jpg')"></div>
+          <div class="form" id="formPane">
+            <h2>Read it in five minutes.</h2>
+            <p class="hint">Tell us where to send it. We send the Guide — and nothing you didn't ask for.</p>
+            <label for="fn">First name</label>
+            <input id="fn" type="text" autocomplete="given-name" placeholder="Your first name">
+            <label for="em">Email</label>
+            <input id="em" type="email" autocomplete="email" placeholder="you@example.com">
+            <label for="wa">WhatsApp <span style="text-transform:none;letter-spacing:0;color:var(--mute)">(optional)</span></label>
+            <input id="wa" type="tel" autocomplete="tel" placeholder="+971 …">
+            <div class="err" id="err">Please add your first name and a valid email.</div>
+            <button class="btn" id="go">Send me the Guide</button>
+            <div class="fine">A person — not a bot — looks after every enquiry. English &amp; Arabic. No spam, ever.</div>
+          </div>
+          <div class="done" id="donePane">
+            <h2>It's yours.</h2>
+            <p id="doneMsg">Thank you — your Guide is ready. We'll be in touch personally, if you'd like.</p>
+            <a class="dl" id="dlLink" href="brochures/Amara Africa — The Gulf Family's Guide to South Africa.pdf" target="_blank" rel="noopener">Download the Guide (PDF)</a>
+            <a class="wa" id="waLink" href="#" target="_blank" rel="noopener">…or say hello on WhatsApp →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>Amara Africa · <a href="https://www.amarafrica.com">amarafrica.com</a> · WhatsApp +971 58 858 5960 · Instagram @amaraafrica_travel</footer>
+
+<script>
+/* ---- Lead capture ----
+   OFFLINE MVP: on submit we (1) keep a local record, (2) reveal the Guide,
+   (3) compose a WhatsApp message pre-filled with the lead's details so it
+   reaches a human. To capture leads straight to your inbox once this is
+   deployed, POST the form to web3forms (you already use it) — set KEY below
+   and uncomment the fetch block. Never invents data; only what the user types. */
+var WEB3FORMS_KEY = ""; // <-- paste your web3forms access key here when live
+
+(function(){
+  var go=document.getElementById('go'), err=document.getElementById('err');
+  function valEmail(v){ return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); }
+  go.addEventListener('click', function(){
+    var fn=document.getElementById('fn').value.trim();
+    var em=document.getElementById('em').value.trim();
+    var wa=document.getElementById('wa').value.trim();
+    if(!fn || !valEmail(em)){ err.style.display='block'; return; }
+    err.style.display='none';
+
+    var lead={ name:fn, email:em, whatsapp:wa, source:'gulf-family-guide', offer:'o0', captured:new Date().toISOString().slice(0,10) };
+    try{ var L=JSON.parse(localStorage.getItem('amara_leads')||'[]'); L.push(lead); localStorage.setItem('amara_leads', JSON.stringify(L)); }catch(e){}
+
+    /* --- production capture (web3forms) — uncomment when KEY is set ---
+    if(WEB3FORMS_KEY){ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({access_key:WEB3FORMS_KEY, subject:'New Guide lead: '+fn, from_name:'Amara Guide', name:fn, email:em, whatsapp:wa, source:'gulf-family-guide'})}); }
+    */
+
+    var msg='Hello Amara, I just downloaded the Gulf Family%27s Guide. My name is '+encodeURIComponent(fn)+
+            (wa?('.'):('. My email is '+encodeURIComponent(em)+'.'))+' I%27d love to hear more.';
+    document.getElementById('waLink').href='https://wa.me/971588585960?text='+msg;
+    document.getElementById('doneMsg').textContent='Thank you, '+fn+' — your Guide is ready below. A person will be glad to help whenever you are.';
+    document.getElementById('formPane').style.display='none';
+    document.getElementById('donePane').style.display='block';
+    /* auto-start the download */
+    try{ document.getElementById('dlLink').click(); }catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amara Africa — Fairways &amp; Fast Cars</title>
+<style>
+  :root{
+    --navy:#16273f;        /* clear navy blue, not black */
+    --navy-deep:#0f1d31;
+    --ivory:#f5f0e7;
+    --paper:#fbf9f4;
+    --ink:#26303c;
+    --mute:#7c8aa0;
+    --gold:#c39a52;
+    --gold-2:#dcb877;
+    --line:rgba(19,36,59,.12);
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#aeb6c1;font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+  .doc{width:1040px;margin:24px auto;background:var(--paper);box-shadow:0 30px 90px -40px rgba(9,15,26,.65);overflow:hidden}
+  .wrap{padding:0 96px}                 /* generous editorial margins */
+  img{display:block;max-width:100%}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:700}
+  .rule{width:56px;height:2px;background:var(--gold);border:0;margin:18px 0}
+
+  /* ---------- HERO IMAGE (clean, no overlay/tint) ---------- */
+  .hero-img{height:500px;background:url('assets/suppliers/grandtouring/fleet-hero.jpg') center 50%/cover no-repeat}
+
+  /* ---------- TITLE BAND (navy — text lives here, not on the photo) ---------- */
+  .titleband{background:var(--navy);color:#fff;text-align:center;padding:46px 96px 46px}
+  .titleband .logo{height:54px;margin:0 auto 22px;display:block;opacity:.97}
+  .titleband .eyebrow{color:var(--gold-2);font-size:12.5px}
+  .titleband h1{font-family:var(--serif);font-weight:600;font-size:52px;line-height:1.05;letter-spacing:-.4px;margin:14px 0 14px;color:#fff}
+  .titleband .tag{font-family:var(--serif);font-style:italic;font-size:22px;color:#e7edf6;max-width:36ch;margin:0 auto;line-height:1.42}
+  .titleband .stmt{font-family:var(--serif);font-style:italic;font-size:18px;color:#c9d8ec;max-width:30ch;margin:26px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.16)}
+  .titleband .stmt small{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2);margin-top:14px;font-weight:700}
+
+  /* ---------- PROSE (flows full width) ---------- */
+  .prose{padding:66px 96px 58px}
+  .prose .eyebrow{color:var(--gold)}
+  .prose h2{font-family:var(--serif);font-weight:600;font-size:34px;color:var(--navy);letter-spacing:-.3px;margin:8px 0 20px;line-height:1.12}
+  .prose p{font-size:17px;line-height:1.8;color:#3a4552;text-align:justify;text-justify:inter-word;-webkit-hyphens:auto;hyphens:auto}
+  .prose p + p{margin-top:16px}
+  .band-img{width:100%;height:auto;display:block}
+
+  /* ---------- THREE DRIVES ---------- */
+  .drives{background:var(--paper);padding:60px 0}
+  .drives .head{text-align:center;margin-bottom:38px}
+  .drives .eyebrow{color:var(--gold)}
+  .drives h2{font-family:var(--serif);font-weight:600;font-size:32px;color:var(--navy);margin-top:8px}
+  .routes{margin-top:10px}
+  .route{display:grid;grid-template-columns:236px 1fr;gap:46px;padding:32px 0;border-top:1px solid var(--line);align-items:start}
+  .route:first-of-type{border-top:0}
+  .route .k{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;line-height:1.5}
+  .route h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy);margin:9px 0 0;line-height:1.1}
+  .route .rbody p{font-size:15.5px;line-height:1.74;color:#3f4a57;text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+  .route .rbody .rec{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--navy);margin-top:13px}
+
+  /* ---------- FLEET ---------- */
+  .fleet{background:var(--navy);color:var(--ivory);padding:64px 96px}
+  .fleet .head{text-align:center;margin-bottom:40px}
+  .fleet .eyebrow{color:var(--gold-2)}
+  .fleet h2{font-family:var(--serif);font-weight:600;font-size:32px;color:#fff;margin-top:8px}
+  .cars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .car .shot{height:220px;border-radius:6px;background:#0c1626 center/cover no-repeat;box-shadow:0 20px 44px -22px rgba(0,0,0,.7)}
+  .car.f .shot{background-image:url('assets/golf/course-arabella.webp')}
+  .car.r .shot{background-image:url('assets/golf/course-cape-royal.webp')}
+  .car.p .shot{background-image:url('assets/golf/course-westlake.jpg')}
+  .car h3{font-family:var(--serif);font-size:21px;font-weight:600;color:#fff;margin:16px 0 6px}
+  .car p{font-size:14px;color:#c3cfdf;line-height:1.55}
+
+  /* ---------- DETAILS (flows across) ---------- */
+  .details{padding:62px 96px}
+  .details .cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .details .eyebrow{color:var(--gold)}
+  .details h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin:8px 0 14px}
+  .details p{font-size:15.5px;line-height:1.7;color:#3f4a57}
+  .details ul{list-style:none;margin-top:6px}
+  .details li{position:relative;padding-left:18px;font-size:15px;color:#3f4a57;line-height:1.5;margin-bottom:9px}
+  .details li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+  /* ---------- CTA ---------- */
+  .cta{background:var(--navy-deep);color:#fff;text-align:center;padding:62px 96px 56px}
+  .cta img.logo{height:66px;margin:0 auto 22px;filter:drop-shadow(0 6px 20px rgba(0,0,0,.5))}
+  .cta h2{font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px;color:#fff;margin-bottom:12px}
+  .cta .contact{font-family:var(--sans);font-size:14px;letter-spacing:.04em;color:#c8d3e0;margin-top:18px}
+  .cta .contact b{color:var(--gold-2)}
+  .foot-note{background:var(--paper);color:var(--mute);font-size:11px;line-height:1.6;padding:16px 96px 26px;text-align:center}
+  @media print{@page{size:1040px 4688px;margin:0}body{background:#fff}.doc{margin:0;box-shadow:none;width:1040px}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}}
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- HERO IMAGE (clean, untouched) -->
+  <div class="hero-img"></div>
+
+  <!-- TITLE BAND -->
+  <header class="titleband">
+    <img class="logo" src="assets/brand/amara-full-white.svg" alt="Amara Africa">
+    <div class="eyebrow">An Amara Signature Journey · Golf &amp; the Cape Coast</div>
+    <h1>Fairways &amp; Fast Cars</h1>
+    <div class="tag">The Cape's greatest courses — and the coast road that carries you between them.</div>
+    <div class="stmt">Play the finest fairways in the Cape. Drive the finest roads to reach them.<small>Crafted for the Gulf</small></div>
+  </header>
+
+  <!-- PROSE -->
+  <section class="wrap prose">
+    <div class="eyebrow">The idea</div>
+    <hr class="rule">
+    <h2>Championship golf between the mountains and the sea — and the drive that links it all.</h2>
+    <p>The Cape gives a golfer everything: parkland fairways beneath Table Mountain, a lagoon course laid along the Kogelberg, ocean holes on the whale coast. The finest of them sit a scenic drive apart — and that drive, along Chapman's Peak and Clarence Drive, is one of the great roads anywhere in the world.</p>
+    <p>So this journey plays both. Three gracious hotels, four championship courses, and the transfer to Arabella made not in a shuttle but behind the wheel of a Ferrari, an Audi R8 or a Porsche 911 — the sea on every bend, the fairways waiting at the end. Non-golfing partners are looked after in parallel: spa days, whales in season, and the vineyards of Constantia and the Winelands.</p>
+  </section>
+  <img class="band-img" src="assets/suppliers/grandtouring/trio.jpg" alt="The fleet on the Cape coast">
+
+
+  <!-- THREE DRIVES -->
+  <section class="drives">
+    <div class="wrap">
+      <div class="head"><div class="eyebrow">Constantia · Arabella · The Garden Route</div><h2>The journey</h2>
+        <p style="font-size:14.5px;color:#5f6f88;max-width:62ch;margin:10px auto 0">Nine unhurried days across the Cape — three gracious hotels, four championship courses, and one unforgettable drive between them.</p></div>
+      <div class="routes">
+        <div class="route">
+          <div><div class="k">The Mother City<br>Constantia fairways</div><h3>Where it begins</h3></div>
+          <div class="rbody"><p>Base beneath the mountain, in the vineyards of Constantia. Two contrasting Cape rounds to open the trip — the modern layout of Cape Royal Golf Estate, and the classic parkland of Westlake Golf Club beneath the peaks. Play one, or both, with the Mother City and the Winelands close at hand.</p><div class="rec">Golf — Cape Royal Golf Estate &amp; Westlake Golf Club.</div></div>
+        </div>
+        <div class="route">
+          <div><div class="k">The transfer, elevated<br>Cape Town to Arabella</div><h3>The drive</h3></div>
+          <div class="rbody"><p>Rather than a shuttle over Sir Lowry's Pass, take the wheel. The supercar run down the coast — Chapman's Peak carved into the cliff, Clarence Drive between the mountain and the sea, a long photography stop above Kogel Bay — arriving at Arabella with the day still young. A professional lead driver runs ahead the whole way, radio in hand.</p><div class="rec">Our companion piece, <i>A Cape Coast Supercar Drive</i>, sets the routes out in full.</div></div>
+        </div>
+        <div class="route">
+          <div><div class="k">The Whale Coast<br>Arabella &amp; Hermanus</div><h3>The lagoon course</h3></div>
+          <div class="rbody"><p>Golf at Arabella Golf Club, consistently ranked among South Africa's finest — laid along the Bot River lagoon beneath the Kogelberg, a spectacular and testing round. Stay on the Hermanus cliffs above the sea, with whales close inshore from June to November, and the Old Harbour and cliff path a short walk away.</p><div class="rec">Golf — Arabella Golf Club, on the Bot River lagoon.</div></div>
+        </div>
+        <div class="route">
+          <div><div class="k">The Garden Route<br>a fitting finale</div><h3>The last eighteen</h3></div>
+          <div class="rbody"><p>East along the coast to the Garden Route for a final, friendly round among the milkwoods and fynbos, and a few last gracious nights by the sea before home.</p><div class="rec">A relaxed, walkable close to nine days of the Cape's best golf.</div></div>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:13px;color:#7c8aa0;margin-top:26px">Tee times and caddies pre-booked at every course; non-golfing partners looked after — spa, whale-watching and vineyard days arranged in parallel. The Cape golf season runs roughly October to April.</p>
+    </div>
+  </section>
+
+  <!-- FLEET -->
+  <section class="fleet">
+    <div class="head"><div class="eyebrow">The fairways</div><h2>Championship golf, four ways.</h2></div>
+    <div class="cars">
+      <div class="car f"><div class="shot"></div><h3>Arabella Golf Club</h3><p>Along the Bot River lagoon beneath the Kogelberg — among South Africa's very finest, and the heart of this journey.</p></div>
+      <div class="car r"><div class="shot"></div><h3>Cape Royal Golf Estate</h3><p>A modern Cape layout near the Mother City — a striking, contemporary opening round.</p></div>
+      <div class="car p"><div class="shot"></div><h3>Westlake Golf Club</h3><p>Classic parkland beneath the mountain — an unhurried, walkable Cape Town classic.</p></div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="wrap details">
+    <div class="cols">
+      <div>
+        <div class="eyebrow">What the journey holds</div>
+        <hr class="rule">
+        <ul>
+          <li>Three gracious hotels and four championship courses across the Cape</li>
+          <li>Tee times and caddies pre-booked at every course</li>
+          <li>The supercar drive to Arabella as your signature transfer</li>
+          <li>Non-golfing partners looked after — spa, whales in season, vineyards</li>
+          <li>Every detail arranged and hosted, first enquiry to final handover, by Amara</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">How it comes together</div>
+        <hr class="rule">
+        <p>Nine days is a comfortable frame; we flex it to your dates and your handicap. The drive can open the trip or punctuate it, at any of the three lengths in the companion brochure. One accountable pair of hands carries the golf, the cars, the hotels and the whole rhythm of the journey — same time zone, same messaging apps, no distance between you and the answer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <img class="logo" src="assets/brand/amara-full-white.svg" alt="Amara Africa">
+    <h2>Begin the conversation.</h2>
+    <div class="contact"><b>Amara Africa</b> · Crafted for the Gulf<br>WhatsApp +971 58 858 5960 · amarafrica.com</div>
+  </section>
+
+  <div class="foot-note">Sample journey — courses, hotels and access are confirmed live before quoting; green fees and tee times are subject to availability. The drive is operated by our Cape Town driving partner; guests drive on a valid licence held 5+ years (carried on the day; UK licence or IDP accepted), and the driving day is alcohol-free until the cars are handed back. Pairs with our companion brochures, <i>A Cape Coast Supercar Drive</i> and <i>Supercar Touring Days</i>.</div>
+
+</div>
+</body>
+</html>
